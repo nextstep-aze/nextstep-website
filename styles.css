@@ -62,6 +62,15 @@ body {
   margin-top: 6px;
 }
 
+a {
+  color: #4ed1c8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* MOBILE OPTIMIZATION */
 @media (max-width: 600px) {
   .hero {
