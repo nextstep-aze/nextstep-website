@@ -1,0 +1,30 @@
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+.hero {
+  background: white;
+  color: #586a79;
+  padding: 20px 20px;
+}
+
+.section {
+  font-family: Montserrat, sans-serif;
+  color: #586a79;
+  padding: 40px 40px;
+}
+
+.btn {
+  background: #4ed1c8;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #3bb5ad;
+}
