@@ -2,29 +2,81 @@ body {
   font-family: Montserrat, sans-serif;
   margin: 0;
   text-align: center;
+  color: #586a79;
+  line-height: 1.5;
 }
 
+/* HERO */
 .hero {
   background: white;
-  color: #586a79;
-  padding: 20px 20px;
+  padding: 30px 20px 20px;
 }
 
+.hero img {
+  width: 220px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* SECTIONS */
 .section {
-  font-family: Montserrat, sans-serif;
-  color: #586a79;
-  padding: 40px 40px;
+  padding: 25px 20px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
+.section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+/* BUTTON */
 .btn {
+  display: inline-block;
   background: #4ed1c8;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 18px;
+  margin-top: 15px;
   text-decoration: none;
-  border-radius: 5px;
-  display: inline-block;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s ease;
 }
 
 .btn:hover {
   background: #3bb5ad;
+}
+
+/* CONTACT */
+.section p + p {
+  margin-top: 6px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .hero {
+    padding: 25px 15px 15px;
+  }
+
+  .section {
+    padding: 20px 15px;
+  }
+
+  .hero h2 {
+    font-size: 18px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
 }
