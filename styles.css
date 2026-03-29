@@ -10,7 +10,8 @@ body {
 .hero {
   background: white;
   padding: 20px;
-  width: 220px;
+  width: 320px;
+  margin: 0 auto;
 }
 
 .hero img {
