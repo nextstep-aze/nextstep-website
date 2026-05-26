@@ -109,42 +109,79 @@ export function Header() {
 
       <div
         id="mobile-nav"
-        className={`md:hidden fixed inset-0 top-16 bg-white transition-opacity duration-200 ${
-          menuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
+        className={`md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-white overflow-y-auto ${
+          menuOpen ? "block" : "hidden"
         }`}
         aria-hidden={!menuOpen}
       >
-        <nav
-          className="container-page py-8 flex flex-col gap-1"
-          aria-label="Mobile"
-        >
-          {primaryNav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname?.startsWith(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`py-3 px-2 text-lg font-medium border-b border-border-soft ${
-                  active ? "text-slate-900" : "text-slate-700"
-                }`}
-                aria-current={active ? "page" : undefined}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+        <span
+          aria-hidden
+          className="block h-px w-full bg-gradient-to-r from-transparent via-brand-500/40 to-transparent"
+        />
+        <div className="container-page pt-6 pb-10 flex flex-col gap-8">
+          <nav className="flex flex-col gap-1" aria-label="Mobile">
+            {primaryNav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname?.startsWith(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative flex items-center pl-5 pr-3 py-4 text-lg rounded-xl transition-colors ${
+                    active
+                      ? "bg-brand-50 text-slate-900 font-semibold"
+                      : "text-slate-700 font-medium hover:bg-surface-muted"
+                  }`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  <span
+                    aria-hidden
+                    className={`absolute left-0 top-3 bottom-3 w-[3px] rounded-full transition-colors ${
+                      active ? "bg-brand-500" : "bg-transparent"
+                    }`}
+                  />
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center justify-center px-5 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors"
+            className="inline-flex items-center justify-center px-5 py-3.5 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors"
           >
             Get in touch
           </Link>
-        </nav>
+
+          <div className="pt-6 border-t border-border-soft">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
+              Contact
+            </p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-ink-700 hover:text-brand-700 transition-colors"
+                >
+                  {site.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${site.phoneHref}`}
+                  className="text-ink-700 hover:text-brand-700 transition-colors"
+                >
+                  {site.phone}
+                </a>
+              </li>
+              <li className="text-ink-700">
+                {site.address.city}, {site.address.country}
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
   );
