@@ -36,6 +36,7 @@ export function Header() {
     : "bg-white border-b border-transparent";
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
     >
@@ -106,8 +107,9 @@ export function Header() {
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
       </div>
+    </header>
 
-      <div
+    <div
         id="mobile-nav"
         className={`md:hidden fixed inset-x-0 top-16 bottom-0 z-40 bg-white overflow-y-auto ${
           menuOpen ? "block" : "hidden"
@@ -183,6 +185,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
