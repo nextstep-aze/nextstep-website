@@ -63,7 +63,7 @@ export default function ForHotelsPage() {
               return (
                 <Reveal key={item.title} delay={i * 60}>
                   <FeatureCard
-                    icon={<Icon width={28} height={28} />}
+                    icon={<Icon width={26} height={26} />}
                     title={item.title}
                     body={item.body}
                   />
@@ -75,7 +75,7 @@ export default function ForHotelsPage() {
       </section>
 
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-surface-muted border-y border-border-soft"
         aria-labelledby="solution-heading"
       >
         <div className="container-page py-20 md:py-28 grid gap-12 lg:grid-cols-[1fr_1.1fr] items-center">
@@ -97,12 +97,12 @@ export default function ForHotelsPage() {
               ].map((row) => (
                 <div
                   key={row.label}
-                  className="flex items-start gap-5 p-5 rounded-sm border border-gray-200 bg-white"
+                  className="flex items-start gap-5 p-5 rounded-2xl border border-border-soft bg-white"
                 >
-                  <span className="font-display text-2xl text-gold-500 w-24 shrink-0">
+                  <span className="font-display font-semibold text-2xl text-brand-600 w-24 shrink-0">
                     {row.label}
                   </span>
-                  <span className="text-[0.95rem] text-gray-700 leading-relaxed">
+                  <span className="text-[0.95rem] text-ink-700 leading-relaxed">
                     {row.body}
                   </span>
                 </div>
@@ -112,9 +112,9 @@ export default function ForHotelsPage() {
         </div>
       </section>
 
-      {/* Why Hotels Choose — dark */}
+      {/* Why Hotels Choose — light, with subtle aqua wash */}
       <section
-        className="relative isolate overflow-hidden bg-navy-900 text-white"
+        className="relative isolate overflow-hidden bg-white"
         aria-labelledby="why-hotels-heading"
       >
         <div
@@ -122,13 +122,12 @@ export default function ForHotelsPage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(60% 70% at 100% 0%, rgba(201,169,97,0.10), transparent 60%), linear-gradient(180deg, #0A1F33 0%, #0D2640 100%)",
+              "radial-gradient(60% 70% at 100% 0%, rgba(78,209,200,0.08), transparent 60%), linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)",
           }}
         />
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
-              tone="dark"
               eyebrow={whyChoose.eyebrow}
               title={<span id="why-hotels-heading">{whyChoose.title}</span>}
             />
@@ -136,17 +135,17 @@ export default function ForHotelsPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {whyChoose.points.map((point, i) => (
               <Reveal key={point.title} delay={i * 50}>
-                <div className="h-full p-7 rounded-sm border border-white/10 bg-white/[0.03] hover:bg-white/[0.05] transition-colors">
+                <div className="h-full p-7 rounded-2xl border border-border-soft bg-white hover:border-brand-500/50 hover:shadow-card-hover transition-all duration-200">
                   <div className="flex items-center gap-3 mb-4">
                     <span
-                      className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gold-500/15 text-gold-400"
+                      className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-100 text-brand-700"
                       aria-hidden
                     >
                       <CheckIcon width={14} height={14} strokeWidth={2.5} />
                     </span>
-                    <h3 className="font-display text-lg text-white">{point.title}</h3>
+                    <h3 className="font-display font-semibold text-lg text-slate-900">{point.title}</h3>
                   </div>
-                  <p className="text-sm text-gray-300 leading-relaxed">{point.body}</p>
+                  <p className="text-sm text-ink-700 leading-relaxed">{point.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -155,7 +154,7 @@ export default function ForHotelsPage() {
       </section>
 
       {/* Operational Departments */}
-      <section className="bg-white" aria-labelledby="hotels-departments-heading">
+      <section className="bg-surface-muted border-y border-border-soft" aria-labelledby="hotels-departments-heading">
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -185,7 +184,7 @@ export default function ForHotelsPage() {
       {/* Simple Process */}
       <section
         id="process"
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-white"
         aria-labelledby="hotels-process-heading"
       >
         <div className="container-page py-20 md:py-28 grid gap-14 lg:grid-cols-[1fr_1.2fr]">

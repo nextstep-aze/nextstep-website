@@ -1,18 +1,18 @@
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost" | "outline-light";
+type Variant = "primary" | "secondary" | "ghost" | "on-dark";
 type Size = "md" | "lg";
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-gold-500 text-navy-900 hover:bg-gold-400 active:bg-gold-500/90 shadow-sm",
+    "bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700",
   secondary:
-    "bg-navy-900 text-white hover:bg-navy-800 active:bg-navy-900",
+    "bg-white text-brand-700 border border-brand-500 hover:bg-brand-50",
   ghost:
-    "bg-transparent text-navy-900 hover:bg-gray-100 active:bg-gray-200",
-  "outline-light":
-    "bg-transparent text-white border border-white/40 hover:bg-white/10 hover:border-white",
+    "bg-transparent text-slate-700 hover:bg-slate-100",
+  "on-dark":
+    "bg-white text-slate-900 hover:bg-brand-100",
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -21,7 +21,7 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-medium tracking-wide rounded-sm transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500";
+  "inline-flex items-center justify-center gap-2 font-medium tracking-wide rounded-full transition-colors duration-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500";
 
 type CommonProps = {
   variant?: Variant;

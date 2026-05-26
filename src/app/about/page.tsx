@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-10 md:grid-cols-2 max-w-5xl">
             {who.body.map((p, i) => (
               <Reveal key={i} delay={i * 80}>
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                <p className="text-base md:text-lg text-ink-700 leading-relaxed">
                   {p}
                 </p>
               </Reveal>
@@ -61,9 +61,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision side-by-side on dark */}
+      {/* Mission & Vision — soft aqua section */}
       <section
-        className="relative isolate overflow-hidden bg-navy-900 text-white"
+        className="relative isolate overflow-hidden bg-surface-soft"
         aria-labelledby="mission-heading"
       >
         <div
@@ -71,35 +71,35 @@ export default function AboutPage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(60% 70% at 100% 0%, rgba(201,169,97,0.10), transparent 60%), linear-gradient(180deg, #0A1F33 0%, #0D2640 100%)",
+              "radial-gradient(60% 70% at 100% 0%, rgba(78,209,200,0.18), transparent 60%), linear-gradient(180deg, #DDF7F5 0%, #F2F6F7 100%)",
           }}
         />
         <div className="container-page py-20 md:py-28 grid gap-12 lg:grid-cols-2">
           <Reveal>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-300 mb-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-700 mb-4">
                 {mission.eyebrow}
               </p>
               <h2
                 id="mission-heading"
-                className="font-display text-white text-3xl md:text-4xl leading-[1.15]"
+                className="font-display font-semibold text-slate-900 text-3xl md:text-4xl leading-[1.15]"
               >
                 {mission.title}
               </h2>
-              <p className="mt-6 text-base md:text-lg text-gray-200/90 leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-ink-700 leading-relaxed">
                 {mission.body}
               </p>
             </div>
           </Reveal>
           <Reveal>
-            <div className="lg:border-l lg:border-white/15 lg:pl-12">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-300 mb-4">
+            <div className="lg:border-l lg:border-brand-500/30 lg:pl-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-700 mb-4">
                 {vision.eyebrow}
               </p>
-              <h2 className="font-display text-white text-3xl md:text-4xl leading-[1.15]">
+              <h2 className="font-display font-semibold text-slate-900 text-3xl md:text-4xl leading-[1.15]">
                 {vision.title}
               </h2>
-              <p className="mt-6 text-base md:text-lg text-gray-200/90 leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-ink-700 leading-relaxed">
                 {vision.body}
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
               return (
                 <Reveal key={point.title} delay={i * 60}>
                   <FeatureCard
-                    icon={<Icon width={28} height={28} />}
+                    icon={<Icon width={26} height={26} />}
                     title={point.title}
                     body={point.body}
                   />
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
       {/* University Pipeline */}
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-surface-muted border-y border-border-soft"
         aria-labelledby="about-pipeline-heading"
       >
         <div className="container-page py-20 md:py-28 grid gap-12 lg:grid-cols-2 items-center">
@@ -150,10 +150,10 @@ export default function AboutPage() {
             />
           </Reveal>
           <Reveal>
-            <div className="p-8 md:p-10 rounded-sm border border-gray-200 bg-white">
+            <div className="p-8 md:p-10 rounded-2xl border border-border-soft bg-white">
               <div className="flex items-center gap-3 mb-6">
-                <LayersIcon width={28} height={28} className="text-gold-500" />
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-700">
+                <LayersIcon width={26} height={26} className="text-brand-600" />
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-700">
                   Pipeline characteristics
                 </p>
               </div>
@@ -164,11 +164,11 @@ export default function AboutPage() {
                   "Pre-screened motivation, language, conduct",
                   "Reliable supply for repeat-partner properties",
                 ].map((line) => (
-                  <li key={line} className="flex gap-3 text-sm text-gray-700">
+                  <li key={line} className="flex gap-3 text-sm text-ink-700">
                     <CheckIcon
                       width={18}
                       height={18}
-                      className="text-gold-500 mt-0.5 shrink-0"
+                      className="text-brand-600 mt-0.5 shrink-0"
                       strokeWidth={2.25}
                     />
                     <span>{line}</span>

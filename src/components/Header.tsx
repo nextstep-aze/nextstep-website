@@ -32,8 +32,8 @@ export function Header() {
   }, [menuOpen]);
 
   const headerBg = scrolled
-    ? "bg-white/95 backdrop-blur border-b border-gray-200"
-    : "bg-white/0 border-b border-transparent";
+    ? "bg-white/95 backdrop-blur border-b border-border-soft shadow-[0_1px_0_rgb(47_55_66_/0.03)]"
+    : "bg-white border-b border-transparent";
 
   return (
     <header
@@ -42,24 +42,17 @@ export function Header() {
       <div className="container-page flex items-center justify-between h-16 md:h-20">
         <Link
           href="/"
-          className="flex items-center gap-3 focus-visible:outline-2"
+          className="flex items-center"
           aria-label={`${site.name} — Home`}
         >
           <Image
             src={site.logo}
-            alt=""
-            width={36}
-            height={36}
+            alt={site.name}
+            width={160}
+            height={56}
             priority
-            className="h-9 w-9"
+            className="h-11 md:h-14 w-auto"
           />
-          <span
-            className={`font-display text-xl tracking-tight transition-colors duration-300 ${
-              scrolled ? "text-navy-900" : "text-white"
-            }`}
-          >
-            {site.name}
-          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8" aria-label="Primary">
@@ -73,22 +66,18 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
-                  scrolled
-                    ? active
-                      ? "text-navy-900"
-                      : "text-gray-700 hover:text-navy-900"
-                    : active
-                      ? "text-white"
-                      : "text-gray-200 hover:text-white"
+                  active
+                    ? "text-slate-900"
+                    : "text-slate-700 hover:text-slate-900"
                 }`}
                 aria-current={active ? "page" : undefined}
               >
                 {item.label}
                 <span
-                  className={`block h-px mt-1 origin-left transition-transform duration-300 ${
+                  className={`block h-[2px] mt-1 origin-left transition-transform duration-300 ${
                     active
-                      ? "bg-gold-500 scale-x-100"
-                      : "bg-gold-500 scale-x-0"
+                      ? "bg-brand-500 scale-x-100"
+                      : "bg-brand-500 scale-x-0"
                   }`}
                   aria-hidden="true"
                 />
@@ -100,11 +89,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/contact"
-            className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-sm transition-colors ${
-              scrolled
-                ? "bg-navy-900 text-white hover:bg-navy-800"
-                : "bg-gold-500 text-navy-900 hover:bg-gold-400"
-            }`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full bg-brand-500 text-white hover:bg-brand-600 transition-colors"
           >
             Get in touch
           </Link>
@@ -112,9 +97,7 @@ export function Header() {
 
         <button
           type="button"
-          className={`md:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 transition-colors duration-300 ${
-            menuOpen || scrolled ? "text-navy-900" : "text-white"
-          }`}
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-slate-700"
           onClick={() => setMenuOpen((s) => !s)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -146,8 +129,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`py-3 px-2 text-lg font-medium border-b border-gray-100 ${
-                  active ? "text-navy-900" : "text-gray-700"
+                className={`py-3 px-2 text-lg font-medium border-b border-border-soft ${
+                  active ? "text-slate-900" : "text-slate-700"
                 }`}
                 aria-current={active ? "page" : undefined}
               >
@@ -157,19 +140,11 @@ export function Header() {
           })}
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center justify-center px-5 py-3 rounded-sm bg-gold-500 text-navy-900 font-medium"
+            className="mt-6 inline-flex items-center justify-center px-5 py-3 rounded-full bg-brand-500 text-white font-medium hover:bg-brand-600 transition-colors"
           >
             Get in touch
           </Link>
         </nav>
-        <button
-          type="button"
-          className="absolute top-[-3.5rem] right-4 md:hidden w-10 h-10 inline-flex items-center justify-center text-navy-900"
-          onClick={() => setMenuOpen(false)}
-          aria-label="Close menu"
-        >
-          <CloseIcon />
-        </button>
       </div>
     </header>
   );

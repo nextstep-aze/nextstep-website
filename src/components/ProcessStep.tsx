@@ -21,10 +21,10 @@ export function ProcessStep({
     <li className="relative flex gap-5 md:gap-7 pb-10 last:pb-0">
       <div className="relative flex flex-col items-center">
         <span
-          className={`relative z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-display text-base ${
+          className={`relative z-10 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-display text-base font-semibold ${
             isDark
-              ? "bg-gold-500 text-navy-900"
-              : "bg-navy-900 text-gold-400"
+              ? "bg-brand-500 text-white"
+              : "bg-brand-100 text-brand-700"
           }`}
           aria-hidden
         >
@@ -34,7 +34,7 @@ export function ProcessStep({
           <span
             aria-hidden
             className={`absolute top-12 bottom-0 w-px ${
-              isDark ? "bg-white/15" : "bg-gray-200"
+              isDark ? "bg-white/15" : "bg-border-soft"
             }`}
           />
         )}
@@ -42,15 +42,15 @@ export function ProcessStep({
 
       <div className="pt-2 pb-2">
         <h3
-          className={`font-display text-xl ${
-            isDark ? "text-white" : "text-navy-900"
+          className={`font-display font-semibold text-xl ${
+            isDark ? "text-white" : "text-slate-900"
           }`}
         >
           {title}
         </h3>
         <p
           className={`mt-2 text-[0.95rem] leading-relaxed ${
-            isDark ? "text-gray-300" : "text-gray-700"
+            isDark ? "text-slate-100/85" : "text-ink-700"
           }`}
         >
           {body}

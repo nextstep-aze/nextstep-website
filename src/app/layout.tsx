@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -13,12 +13,11 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
+const sora = Sora({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
-  weight: ["600", "700"],
-  style: ["normal"],
+  variable: "--font-sora",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -92,7 +91,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A1F33",
+  themeColor: "#4ed1c8",
   width: "device-width",
   initialScale: 1,
 };
@@ -143,11 +142,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-white text-gray-900 antialiased">
+    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
+      <body className="bg-surface text-ink-900 antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-navy-900 focus:text-white focus:px-4 focus:py-2 focus:rounded-sm"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-slate-700 focus:text-white focus:px-4 focus:py-2 focus:rounded-sm"
         >
           Skip to content
         </a>

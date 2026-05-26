@@ -64,7 +64,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-10 md:grid-cols-2 max-w-5xl">
             {whatIs.body.map((p, i) => (
               <Reveal key={i} delay={i * 80}>
-                <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+                <p className="text-base md:text-lg text-ink-700 leading-relaxed">
                   {p}
                 </p>
               </Reveal>
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       {/* Problem We Solve */}
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-surface-muted border-y border-border-soft"
         aria-labelledby="problem-heading"
       >
         <div className="container-page py-20 md:py-28">
@@ -91,7 +91,7 @@ export default function HomePage() {
               return (
                 <Reveal key={item.title} delay={i * 60}>
                   <FeatureCard
-                    icon={<Icon width={28} height={28} />}
+                    icon={<Icon width={26} height={26} />}
                     title={item.title}
                     body={item.body}
                   />
@@ -102,9 +102,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why NextStep — dark section */}
+      {/* Why NextStep — light section with subtle aqua wash */}
       <section
-        className="relative isolate overflow-hidden bg-navy-900 text-white"
+        className="relative isolate overflow-hidden bg-white"
         aria-labelledby="why-heading"
       >
         <div
@@ -112,13 +112,12 @@ export default function HomePage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(50% 60% at 90% 0%, rgba(201,169,97,0.10), transparent 60%), linear-gradient(180deg, #0A1F33 0%, #0D2640 100%)",
+              "radial-gradient(50% 60% at 90% 0%, rgba(78,209,200,0.08), transparent 60%), linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)",
           }}
         />
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
-              tone="dark"
               eyebrow={whyUs.eyebrow}
               title={<span id="why-heading">{whyUs.title}</span>}
             />
@@ -128,12 +127,12 @@ export default function HomePage() {
               <Reveal as="li" key={point} delay={i * 50}>
                 <div className="flex items-start gap-4">
                   <span
-                    className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-400 mt-0.5"
+                    className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 mt-0.5"
                     aria-hidden
                   >
                     <CheckIcon width={14} height={14} strokeWidth={2.5} />
                   </span>
-                  <span className="text-base md:text-lg text-gray-200/95">
+                  <span className="text-base md:text-lg text-ink-700">
                     {point}
                   </span>
                 </div>
@@ -144,14 +143,14 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white" aria-labelledby="how-heading">
+      <section className="bg-surface-muted border-y border-border-soft" aria-labelledby="how-heading">
         <div className="container-page py-20 md:py-28 grid gap-14 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
             <SectionHeading
               eyebrow={howItWorks.eyebrow}
               title={<span id="how-heading">{howItWorks.title}</span>}
             />
-            <p className="mt-6 text-base text-gray-700 leading-relaxed max-w-md">
+            <p className="mt-6 text-base text-ink-700 leading-relaxed max-w-md">
               Every NextStep partnership follows the same structured process —
               from initial conversation to interns arriving on property.
             </p>
@@ -174,7 +173,7 @@ export default function HomePage() {
 
       {/* Candidate Profiles */}
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-white"
         aria-labelledby="profiles-heading"
       >
         <div className="container-page py-20 md:py-28">
@@ -190,7 +189,7 @@ export default function HomePage() {
             {candidateProfiles.profiles.map((profile, i) => (
               <Reveal key={profile.title} delay={i * 60}>
                 <FeatureCard
-                  icon={<UsersIcon width={28} height={28} />}
+                  icon={<UsersIcon width={26} height={26} />}
                   title={profile.title}
                   body={profile.body}
                 />
@@ -201,7 +200,7 @@ export default function HomePage() {
       </section>
 
       {/* Operational Departments */}
-      <section className="bg-white" aria-labelledby="departments-heading">
+      <section className="bg-surface-muted border-y border-border-soft" aria-labelledby="departments-heading">
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
@@ -230,7 +229,7 @@ export default function HomePage() {
 
       {/* University Pipeline */}
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-white"
         aria-labelledby="pipeline-heading"
       >
         <div className="container-page py-20 md:py-28 grid gap-12 lg:grid-cols-2 items-center">
@@ -242,10 +241,10 @@ export default function HomePage() {
             />
           </Reveal>
           <Reveal>
-            <div className="relative p-8 md:p-10 rounded-sm border border-gray-200 bg-white">
+            <div className="relative p-8 md:p-10 rounded-2xl border border-border-soft bg-surface-muted">
               <div className="flex items-center gap-3 mb-6">
-                <LayersIcon width={28} height={28} className="text-gold-500" />
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-700">
+                <LayersIcon width={26} height={26} className="text-brand-600" />
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-700">
                   Why this matters
                 </p>
               </div>
@@ -256,11 +255,11 @@ export default function HomePage() {
                   "Aligned with university calendars, internship credit requirements",
                   "Continuous candidate flow for multi-property partners",
                 ].map((line) => (
-                  <li key={line} className="flex gap-3 text-sm text-gray-700">
+                  <li key={line} className="flex gap-3 text-sm text-ink-700">
                     <CheckIcon
                       width={18}
                       height={18}
-                      className="text-gold-500 mt-0.5 shrink-0"
+                      className="text-brand-600 mt-0.5 shrink-0"
                       strokeWidth={2.25}
                     />
                     <span>{line}</span>
@@ -272,9 +271,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2026 Partner Network */}
+      {/* 2026 Partner Network — soft aqua section */}
       <section
-        className="relative isolate overflow-hidden bg-navy-800 text-white"
+        className="relative isolate overflow-hidden bg-surface-soft"
         aria-labelledby="partners-heading"
       >
         <div
@@ -282,13 +281,12 @@ export default function HomePage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(60% 70% at 0% 100%, rgba(201,169,97,0.08), transparent 60%), linear-gradient(180deg, #11304D 0%, #0A1F33 100%)",
+              "radial-gradient(60% 70% at 0% 100%, rgba(78,209,200,0.18), transparent 60%), linear-gradient(180deg, #DDF7F5 0%, #F2F6F7 100%)",
           }}
         />
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
-              tone="dark"
               eyebrow={partners.eyebrow}
               title={<span id="partners-heading">{partners.title}</span>}
               intro={partners.body}
@@ -304,15 +302,15 @@ export default function HomePage() {
               ].map((card) => (
                 <div
                   key={card.label}
-                  className="p-6 rounded-sm border border-white/10 bg-white/[0.03]"
+                  className="p-6 rounded-2xl border border-border-soft bg-white"
                 >
-                  <p className="text-xs uppercase tracking-[0.18em] text-gold-300">
+                  <p className="text-xs uppercase tracking-[0.18em] text-brand-700">
                     Region
                   </p>
-                  <p className="mt-2 font-display text-2xl text-white">
+                  <p className="mt-2 font-display font-semibold text-2xl text-slate-900">
                     {card.label}
                   </p>
-                  <p className="mt-1 text-sm text-gray-300">{card.body}</p>
+                  <p className="mt-1 text-sm text-ink-700">{card.body}</p>
                 </div>
               ))}
             </div>

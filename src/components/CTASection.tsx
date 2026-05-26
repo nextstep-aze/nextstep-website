@@ -18,7 +18,7 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section
-      className="relative isolate overflow-hidden bg-navy-900 text-white"
+      className="relative isolate overflow-hidden bg-surface-soft"
       aria-labelledby="cta-heading"
     >
       <div
@@ -26,24 +26,24 @@ export function CTASection({
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 80% at 80% 0%, rgba(201,169,97,0.10), transparent 60%), linear-gradient(180deg, #0A1F33 0%, #11304D 100%)",
+            "radial-gradient(60% 80% at 80% 0%, rgba(78,209,200,0.18), transparent 60%), linear-gradient(180deg, #DDF7F5 0%, #F2F6F7 100%)",
         }}
       />
       <div className="container-page py-20 md:py-28">
         <div className="max-w-3xl">
           {eyebrow ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-300 mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700 mb-4">
               {eyebrow}
             </p>
           ) : null}
           <h2
             id="cta-heading"
-            className="font-display text-white text-3xl md:text-4xl lg:text-5xl leading-[1.1]"
+            className="font-display font-semibold text-slate-900 text-3xl md:text-4xl lg:text-5xl leading-[1.1]"
           >
             {title}
           </h2>
           {body ? (
-            <p className="mt-6 text-base md:text-lg text-gray-200/90 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base md:text-lg text-ink-700 max-w-2xl leading-relaxed">
               {body}
             </p>
           ) : null}
@@ -55,11 +55,7 @@ export function CTASection({
                 </Button>
               ) : null}
               {secondaryCta ? (
-                <Button
-                  href={secondaryCta.href}
-                  variant="outline-light"
-                  size="lg"
-                >
+                <Button href={secondaryCta.href} variant="secondary" size="lg">
                   {secondaryCta.label}
                 </Button>
               ) : null}

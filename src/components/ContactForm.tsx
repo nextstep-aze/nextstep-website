@@ -87,9 +87,9 @@ export function ContactForm() {
   }
 
   const fieldClasses =
-    "w-full rounded-sm border border-gray-300 bg-white px-4 py-3 text-[0.95rem] text-navy-900 placeholder:text-gray-400 focus:outline-none focus:border-navy-900 focus:ring-2 focus:ring-gold-500/30 transition-colors";
+    "w-full rounded-lg border border-border-soft bg-white px-4 py-3 text-[0.95rem] text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 transition-colors";
   const labelClasses =
-    "block text-xs font-semibold uppercase tracking-[0.12em] text-gray-700 mb-2";
+    "block text-xs font-semibold uppercase tracking-[0.12em] text-slate-700 mb-2";
   const errorClasses = "mt-1.5 text-xs text-red-600";
 
   return (
@@ -188,10 +188,10 @@ export function ContactForm() {
             return (
               <label
                 key={role}
-                className={`cursor-pointer text-center text-sm py-2.5 rounded-sm border transition-colors ${
+                className={`cursor-pointer text-center text-sm py-2.5 rounded-full border transition-colors ${
                   active
-                    ? "bg-navy-900 text-white border-navy-900"
-                    : "bg-white text-gray-700 border-gray-300 hover:border-navy-900"
+                    ? "bg-brand-500 text-white border-brand-500"
+                    : "bg-white text-slate-700 border-border-soft hover:border-brand-500"
                 }`}
               >
                 <input
@@ -233,7 +233,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-slate-500">
           We respond within one business day. Your message will open in your default
           email client.
         </p>
@@ -245,7 +245,7 @@ export function ContactForm() {
       {submitted ? (
         <p
           role="status"
-          className="text-sm text-navy-900 bg-gold-200/60 border border-gold-500/40 rounded-sm px-4 py-3"
+          className="text-sm text-slate-900 bg-brand-100 border border-brand-500/40 rounded-lg px-4 py-3"
         >
           Opening your email client... If nothing happens, write us directly at{" "}
           <a

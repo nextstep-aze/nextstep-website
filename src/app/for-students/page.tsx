@@ -61,7 +61,7 @@ export default function ForStudentsPage() {
               return (
                 <Reveal key={point.title} delay={i * 60}>
                   <FeatureCard
-                    icon={<Icon width={28} height={28} />}
+                    icon={<Icon width={26} height={26} />}
                     title={point.title}
                     body={point.body}
                   />
@@ -74,7 +74,7 @@ export default function ForStudentsPage() {
 
       {/* Internship Departments */}
       <section
-        className="bg-gray-50 border-y border-gray-200"
+        className="bg-surface-muted border-y border-border-soft"
         aria-labelledby="student-dept-heading"
       >
         <div className="container-page py-20 md:py-28">
@@ -103,9 +103,9 @@ export default function ForStudentsPage() {
         </div>
       </section>
 
-      {/* Benefits — dark */}
+      {/* Benefits — light, with subtle aqua wash */}
       <section
-        className="relative isolate overflow-hidden bg-navy-900 text-white"
+        className="relative isolate overflow-hidden bg-white"
         aria-labelledby="benefits-heading"
       >
         <div
@@ -113,13 +113,12 @@ export default function ForStudentsPage() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(60% 70% at 0% 0%, rgba(201,169,97,0.10), transparent 60%), linear-gradient(180deg, #0A1F33 0%, #0D2640 100%)",
+              "radial-gradient(60% 70% at 0% 0%, rgba(78,209,200,0.08), transparent 60%), linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%)",
           }}
         />
         <div className="container-page py-20 md:py-28">
           <Reveal>
             <SectionHeading
-              tone="dark"
               eyebrow={benefits.eyebrow}
               title={<span id="benefits-heading">{benefits.title}</span>}
             />
@@ -129,16 +128,16 @@ export default function ForStudentsPage() {
               <Reveal as="li" key={point.title} delay={i * 50}>
                 <div className="flex items-start gap-4">
                   <span
-                    className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm bg-gold-500/15 text-gold-400"
+                    className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-700"
                     aria-hidden
                   >
                     <CheckIcon width={16} height={16} strokeWidth={2.5} />
                   </span>
                   <div>
-                    <h3 className="font-display text-lg text-white">
+                    <h3 className="font-display font-semibold text-lg text-slate-900">
                       {point.title}
                     </h3>
-                    <p className="mt-1.5 text-sm text-gray-300 leading-relaxed">
+                    <p className="mt-1.5 text-sm text-ink-700 leading-relaxed">
                       {point.body}
                     </p>
                   </div>
@@ -152,7 +151,7 @@ export default function ForStudentsPage() {
       {/* Application Steps */}
       <section
         id="steps"
-        className="bg-white"
+        className="bg-surface-muted border-y border-border-soft"
         aria-labelledby="steps-heading"
       >
         <div className="container-page py-20 md:py-28 grid gap-14 lg:grid-cols-[1fr_1.2fr]">

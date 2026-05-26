@@ -10,22 +10,27 @@ type FeatureCardProps = {
 export function FeatureCard({ icon, title, body, tone = "light" }: FeatureCardProps) {
   const isDark = tone === "dark";
   const cardClasses = isDark
-    ? "border border-white/10 bg-white/5 hover:bg-white/[0.07]"
-    : "border border-gray-200 bg-white hover:border-gold-500/50 hover:-translate-y-1";
-  const titleClasses = isDark ? "text-white" : "text-navy-900";
-  const bodyClasses = isDark ? "text-gray-300" : "text-gray-700";
-  const iconClasses = isDark ? "text-gold-400" : "text-gold-500";
+    ? "border border-white/10 bg-white/5 hover:bg-white/[0.08]"
+    : "border border-border-soft bg-white hover:border-brand-500/50 hover:-translate-y-1 hover:shadow-card-hover";
+  const titleClasses = isDark ? "text-white" : "text-slate-900";
+  const bodyClasses = isDark ? "text-slate-100/85" : "text-ink-700";
+  const iconClasses = isDark ? "text-brand-300" : "text-brand-600";
 
   return (
     <article
-      className={`group relative p-7 md:p-8 rounded-sm transition-all duration-200 ${cardClasses}`}
+      className={`group relative p-7 md:p-8 rounded-2xl transition-all duration-200 ${cardClasses}`}
     >
       {icon ? (
-        <div className={`mb-5 ${iconClasses}`} aria-hidden>
+        <div
+          className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${
+            isDark ? "bg-brand-500/15" : "bg-brand-100"
+          } ${iconClasses}`}
+          aria-hidden
+        >
           {icon}
         </div>
       ) : null}
-      <h3 className={`font-display text-xl ${titleClasses}`}>{title}</h3>
+      <h3 className={`font-display font-semibold text-xl ${titleClasses}`}>{title}</h3>
       <p className={`mt-3 text-[0.95rem] leading-relaxed ${bodyClasses}`}>{body}</p>
     </article>
   );

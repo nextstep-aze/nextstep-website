@@ -22,9 +22,9 @@ export function SectionHeading({
   const isDark = tone === "dark";
   const alignClasses =
     align === "center" ? "text-center mx-auto" : "text-left";
-  const introClasses = isDark ? "text-gray-200/90" : "text-gray-700";
-  const titleClasses = isDark ? "text-white" : "text-navy-900";
-  const eyebrowClasses = isDark ? "text-gold-300" : "text-gold-500";
+  const introClasses = isDark ? "text-slate-100/85" : "text-ink-700";
+  const titleClasses = isDark ? "text-white" : "text-slate-900";
+  const eyebrowClasses = isDark ? "text-brand-300" : "text-brand-700";
 
   return (
     <div className={`max-w-3xl ${alignClasses} ${className}`}>
@@ -36,7 +36,7 @@ export function SectionHeading({
         </p>
       ) : null}
       <Tag
-        className={`font-display text-3xl md:text-4xl lg:text-[2.625rem] leading-[1.15] ${titleClasses}`}
+        className={`font-display font-semibold text-3xl md:text-4xl lg:text-[2.625rem] leading-[1.15] tracking-[-0.015em] ${titleClasses}`}
       >
         {title}
       </Tag>
